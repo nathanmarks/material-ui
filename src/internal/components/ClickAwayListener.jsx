@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import events from './utils/events';
+import events from '../events';
 
 const isDescendant = (el, target) => {
   if (target !== null) {

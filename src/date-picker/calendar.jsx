@@ -1,15 +1,15 @@
 import React from 'react';
 import EventListener from 'react-event-listener';
-import DateTime from '../utils/date-time';
+import DateTime from '../internal/date-time';
 import keycode from 'keycode';
 import Transitions from '../styles/transitions';
 import CalendarMonth from './calendar-month';
 import CalendarYear from './calendar-year';
 import CalendarToolbar from './calendar-toolbar';
 import DateDisplay from './date-display';
-import SlideInTransitionGroup from '../transition-groups/slide-in';
-import ClearFix from '../clearfix';
-import getMuiTheme from '../styles/getMuiTheme';
+import SlideInTransitionGroup from '../internal/components/SlideIn';
+import ClearFix from '../internal/components/ClearFix';
+import getMuiTheme from '../getMuiTheme';
 
 const daysArray = [...Array(7)];
 

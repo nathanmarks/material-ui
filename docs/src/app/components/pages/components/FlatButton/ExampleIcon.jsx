@@ -1,6 +1,6 @@
 import React from 'react';
 import FlatButton from 'material-ui/lib/flat-button';
-import {fullWhite} from 'material-ui/lib/styles/colors';
+import {fullWhite} from 'material-ui/lib/colors';
 import ActionAndroid from 'material-ui/lib/svg-icons/action/android';
 import FontIcon from 'material-ui/lib/font-icon';
 

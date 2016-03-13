@@ -1,9 +1,9 @@
 import React from 'react';
-import DateTime from '../utils/date-time';
+import DateTime from '../internal/date-time';
 import DatePickerDialog from './date-picker-dialog';
 import TextField from '../text-field';
-import getMuiTheme from '../styles/getMuiTheme';
-import deprecated from '../utils/deprecatedPropType';
+import getMuiTheme from '../getMuiTheme';
+import deprecated from '../internal/deprecatedPropType';
 
 const DatePicker = React.createClass({
 

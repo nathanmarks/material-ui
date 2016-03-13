@@ -4,10 +4,10 @@ import Title from 'react-title-component';
 import AppBar from 'material-ui/lib/app-bar';
 import IconButton from 'material-ui/lib/icon-button';
 import {Spacing} from 'material-ui/lib/styles';
-import {StyleResizable} from 'material-ui/lib/mixins';
+import StyleResizable from 'material-ui/lib/internal/style-resizable';
 
-import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
-import {darkWhite, lightWhite, grey900} from 'material-ui/lib/styles/colors';
+import getMuiTheme from 'material-ui/lib/getMuiTheme';
+import {darkWhite, lightWhite, grey900} from 'material-ui/lib/colors';
 
 import AppLeftNav from './AppLeftNav';
 import FullWidthSection from './FullWidthSection';

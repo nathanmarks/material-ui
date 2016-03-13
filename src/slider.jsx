@@ -1,8 +1,8 @@
 import React from 'react';
 import keycode from 'keycode';
 import Transitions from './styles/transitions';
-import FocusRipple from './ripples/focus-ripple';
-import getMuiTheme from './styles/getMuiTheme';
+import FocusRipple from './internal/components/FocusRipple';
+import getMuiTheme from './getMuiTheme';
 
 /**
   * Verifies min/max range.

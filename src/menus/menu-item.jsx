@@ -4,7 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Popover from '../popover/popover';
 import CheckIcon from '../svg-icons/navigation/check';
 import ListItem from '../lists/list-item';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 import Menu from './menu';
 
 const nestedMenuStyle = {

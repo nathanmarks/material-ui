@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventListener from 'react-event-listener';
-import RenderToLayer from '../render-to-layer';
-import PropTypes from '../utils/prop-types';
+import RenderToLayer from '../internal/components/RenderToLayer';
+import PropTypes from '../internal/prop-types';
 import Paper from '../paper';
 import throttle from 'lodash.throttle';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 import PopoverDefaultAnimation from './popover-default-animation';
 
 const Popover = React.createClass({

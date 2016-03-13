@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/lib/text-field';
-import {orange500} from 'material-ui/lib/styles/colors';
+import {orange500} from 'material-ui/lib/colors';
 
 const styles = {
   errorStyle: {

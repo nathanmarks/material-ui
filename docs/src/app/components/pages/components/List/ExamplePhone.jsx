@@ -5,7 +5,7 @@ import ListItem from 'material-ui/lib/lists/list-item';
 import Divider from 'material-ui/lib/divider';
 import CommunicationCall from 'material-ui/lib/svg-icons/communication/call';
 import CommunicationChatBubble from 'material-ui/lib/svg-icons/communication/chat-bubble';
-import {indigo500} from 'material-ui/lib/styles/colors';
+import {indigo500} from 'material-ui/lib/colors';
 import CommunicationEmail from 'material-ui/lib/svg-icons/communication/email';
 
 const ListExamplePhone = () => (

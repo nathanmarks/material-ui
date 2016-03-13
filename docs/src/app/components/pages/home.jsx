@@ -3,7 +3,7 @@ import HomeFeature from './HomeFeature';
 import FullWidthSection from '../FullWidthSection';
 
 import RaisedButton from 'material-ui/lib/raised-button';
-import {StyleResizable} from 'material-ui/lib/mixins';
+import StyleResizable from 'material-ui/lib/internal/style-resizable';
 import {Spacing, Typography, lightBaseTheme} from 'material-ui/lib/styles';
 import {cyan500, grey200, darkWhite} from 'material-ui/lib/styles/colors';
 

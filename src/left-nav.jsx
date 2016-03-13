@@ -4,10 +4,10 @@ import EventListener from 'react-event-listener';
 import keycode from 'keycode';
 import autoPrefix from './styles/auto-prefix';
 import Transitions from './styles/transitions';
-import Overlay from './overlay';
+import Overlay from './internal/components/Overlay';
 import Paper from './paper';
-import getMuiTheme from './styles/getMuiTheme';
-import PropTypes from './utils/prop-types';
+import getMuiTheme from './getMuiTheme';
+import PropTypes from './internal/prop-types';
 
 let openNavEventHandler = null;
 

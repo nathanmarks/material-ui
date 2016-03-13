@@ -7,7 +7,7 @@ import Typography from './typography';
 import lightBaseTheme from './baseThemes/lightBaseTheme';
 import darkBaseTheme from './baseThemes/darkBaseTheme';
 import ThemeDecorator from './theme-decorator';
-import getMuiTheme from './getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 import ZIndex from './zIndex';
 
 const LightRawTheme = lightBaseTheme;

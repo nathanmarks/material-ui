@@ -5,7 +5,7 @@ export default class TimePickerExampleComplex extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value24: null, value12: null};
+    this.state = {value24: null, value12: new Date};
   }
 
   handleChangeTimePicker24 = (event, date) => {

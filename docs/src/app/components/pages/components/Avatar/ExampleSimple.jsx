@@ -12,7 +12,7 @@ orange200,
 deepOrange300,
 pink400,
 purple500,
-} from 'material-ui/lib/styles/colors';
+} from 'material-ui/lib/colors';
 
 const AvatarExampleSimple = () => (
   <List>

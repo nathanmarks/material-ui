@@ -1,6 +1,6 @@
 import getMuiTheme from 'styles/getMuiTheme';
 
-describe('getMuiTheme', () => {
+describe('./getMuiTheme', () => {
   // Test backward compatibility
   it('should work when we use two parameters', () => {
     const muiTheme = getMuiTheme({

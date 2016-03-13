@@ -2,7 +2,7 @@ import React from 'react';
 import autoPrefix from './styles/auto-prefix';
 import Transitions from './styles/transitions';
 import Paper from './paper';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 
 const VIEWBOX_SIZE = 32;
 

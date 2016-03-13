@@ -1,6 +1,6 @@
-import CircleRipple from './circle-ripple';
-import FocusRipple from './focus-ripple';
-import TouchRipple from './touch-ripple';
+import CircleRipple from './CircleRipple';
+import FocusRipple from './FocusRipple';
+import TouchRipple from './TouchRipple';
 
 export {CircleRipple};
 export {FocusRipple};

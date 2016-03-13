@@ -1,6 +1,6 @@
 import React from 'react';
 import Transitions from '../styles/transitions';
-import SlideInTransitionGroup from '../transition-groups/slide-in';
+import SlideInTransitionGroup from '../internal/components/SlideIn';
 
 function getStyles(props, state) {
   const {

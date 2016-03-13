@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Events from '../utils/events';
-import PropTypes from '../utils/prop-types';
+import Events from '../internal/events';
+import PropTypes from '../internal/prop-types';
 import Menu from '../menus/menu';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 import Popover from '../popover/popover';
 
 const IconMenu = React.createClass({

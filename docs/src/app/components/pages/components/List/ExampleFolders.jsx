@@ -8,7 +8,7 @@ import Subheader from 'material-ui/lib/Subheader';
 import Avatar from 'material-ui/lib/avatar';
 import FileFolder from 'material-ui/lib/svg-icons/file/folder';
 import ActionAssignment from 'material-ui/lib/svg-icons/action/assignment';
-import {blue500, yellow600} from 'material-ui/lib/styles/colors';
+import {blue500, yellow600} from 'material-ui/lib/colors';
 import EditorInsertChart from 'material-ui/lib/svg-icons/editor/insert-chart';
 
 const ListExampleFolder = () => (

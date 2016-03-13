@@ -4,7 +4,8 @@ import Title from 'react-title-component';
 import mui from 'material-ui';
 import MarkdownElement from '../../MarkdownElement';
 import muiThemeable from 'material-ui/lib/muiThemeable';
-import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import getMuiTheme from 'material-ui/lib/getMuiTheme';
+import StyleResizable from 'material-ui/internal/style-resizable';
 
 import themesText from './themes.md';
 
@@ -27,7 +28,6 @@ const {
   FloatingActionButton,
   LeftNav,
   MenuItem,
-  Mixins,
   Paper,
   RadioButton,
   RadioButtonGroup,
@@ -41,7 +41,6 @@ const {
   Toggle,
 } = mui;
 
-const {StyleResizable} = Mixins;
 const {Typography} = Styles;
 const DarkRawTheme = Styles.darkBaseTheme;
 

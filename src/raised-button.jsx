@@ -1,10 +1,10 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import ColorManipulator from './utils/color-manipulator';
-import Children from './utils/children';
-import EnhancedButton from './enhanced-button';
+import ColorManipulator from './internal/color-manipulator';
+import Children from './internal/children';
+import EnhancedButton from './internal/components/EnhancedButton';
 import Paper from './paper';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 
 function validateLabel(props, propName, componentName) {
   if (!props.children && !props.label && !props.icon) {

@@ -2,7 +2,7 @@ import React from 'react';
 import OpenIcon from '../svg-icons/hardware/keyboard-arrow-up';
 import CloseIcon from '../svg-icons/hardware/keyboard-arrow-down';
 import IconButton from '../icon-button';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 function getStyles() {
   return {

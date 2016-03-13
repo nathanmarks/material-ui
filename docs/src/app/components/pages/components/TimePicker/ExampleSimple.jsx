@@ -5,6 +5,7 @@ const TimePickerExampleSimple = () => (
   <div>
     <TimePicker
       hintText="12hr Format"
+      value={new Date}
     />
     <TimePicker
       format="24hr"

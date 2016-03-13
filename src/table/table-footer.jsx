@@ -1,6 +1,6 @@
 import React from 'react';
 import TableRowColumn from './table-row-column';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 function getStyles(props, state) {
   const {

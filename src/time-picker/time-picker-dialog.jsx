@@ -4,7 +4,7 @@ import keycode from 'keycode';
 import Clock from './clock';
 import Dialog from '../dialog';
 import FlatButton from '../flat-button';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 const TimePickerDialog = React.createClass({
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ClockNumber from './clock-number';
 import ClockPointer from './clock-pointer';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 function rad2deg(rad) {
   return rad * 57.29577951308232;

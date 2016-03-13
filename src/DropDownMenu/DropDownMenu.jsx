@@ -2,8 +2,8 @@ import React from 'react';
 import Transitions from '../styles/transitions';
 import DropDownArrow from '../svg-icons/navigation/arrow-drop-down';
 import Menu from '../menus/menu';
-import ClearFix from '../clearfix';
-import getMuiTheme from '../styles/getMuiTheme';
+import ClearFix from '../internal/components/ClearFix';
+import getMuiTheme from '../getMuiTheme';
 import Popover from '../popover/popover';
 import PopoverAnimationFromTop from '../popover/popover-animation-from-top';
 

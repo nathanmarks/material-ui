@@ -1,6 +1,6 @@
 import React from 'react';
-import getMuiTheme from './styles/getMuiTheme';
-import Transitions from './styles/transitions';
+import getMuiTheme from '../../getMuiTheme';
+import Transitions from '../../styles/transitions';
 
 function getStyles(props, state) {
   const {overlay} = state.muiTheme;

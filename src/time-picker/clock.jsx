@@ -2,7 +2,7 @@ import React from 'react';
 import TimeDisplay from './time-display';
 import ClockHours from './clock-hours';
 import ClockMinutes from './clock-minutes';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 const Clock = React.createClass({
 

@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import EventListener from 'react-event-listener';
 import keycode from 'keycode';
 import Transitions from './styles/transitions';
-import Overlay from './overlay';
-import RenderToLayer from './render-to-layer';
+import Overlay from './internal/components/Overlay';
+import RenderToLayer from './internal/components/RenderToLayer';
 import Paper from './paper';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 
 import ReactTransitionGroup from 'react-addons-transition-group';
 

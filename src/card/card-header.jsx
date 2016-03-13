@@ -1,6 +1,6 @@
 import React from 'react';
 import Avatar from '../avatar';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 function getStyles(props, state) {
   const {card} = state.muiTheme;

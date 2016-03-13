@@ -1,6 +1,6 @@
 import React from 'react';
 import RadioButton from './radio-button';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 import warning from 'warning';
 
 const RadioButtonGroup = React.createClass({

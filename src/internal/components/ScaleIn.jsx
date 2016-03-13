@@ -1,8 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ReactTransitionGroup from 'react-addons-transition-group';
-import ScaleInChild from './scale-in-child';
-import getMuiTheme from '../styles/getMuiTheme';
+import ScaleInChild from './ScaleInChild';
+import getMuiTheme from '../../getMuiTheme';
 
 const ScaleIn = React.createClass({
 

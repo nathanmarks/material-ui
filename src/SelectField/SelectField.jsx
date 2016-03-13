@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '../text-field';
 import DropDownMenu from '../DropDownMenu';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 function getStyles(props) {
   return {

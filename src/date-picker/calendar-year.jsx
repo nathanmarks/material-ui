@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DateTime from '../utils/date-time';
+import DateTime from '../internal/date-time';
 import YearButton from './year-button';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 const CalendarYear = React.createClass({
 

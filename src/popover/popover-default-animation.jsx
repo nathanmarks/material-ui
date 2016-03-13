@@ -1,7 +1,7 @@
 import Transitions from '../styles/transitions';
 import React from 'react';
-import PropTypes from '../utils/prop-types';
-import getMuiTheme from '../styles/getMuiTheme';
+import PropTypes from '../internal/prop-types';
+import getMuiTheme from '../getMuiTheme';
 import Paper from '../paper';
 
 function getStyles(props, state) {

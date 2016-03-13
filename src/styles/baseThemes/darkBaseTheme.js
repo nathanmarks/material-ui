@@ -4,7 +4,7 @@ grey600,
 pinkA100, pinkA200, pinkA400,
 fullWhite,
 } from '../colors';
-import ColorManipulator from '../../utils/color-manipulator';
+import ColorManipulator from '../../internal/color-manipulator';
 import Spacing from '../spacing';
 
 export default {

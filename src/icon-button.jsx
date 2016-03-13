@@ -1,11 +1,11 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import PropTypes from './utils/prop-types';
-import EnhancedButton from './enhanced-button';
+import PropTypes from './internal/prop-types';
+import EnhancedButton from './internal/components/EnhancedButton';
 import FontIcon from './font-icon';
-import Tooltip from './tooltip';
-import Children from './utils/children';
-import getMuiTheme from './styles/getMuiTheme';
+import Tooltip from './internal/components/Tooltip';
+import Children from './internal/children';
+import getMuiTheme from './getMuiTheme';
 
 function getStyles(props, state) {
   const {

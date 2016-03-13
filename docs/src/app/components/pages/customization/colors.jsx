@@ -1,17 +1,16 @@
 import React from 'react';
 import Title from 'react-title-component';
+import StyleResizable from 'material-ui/internal/style-resizable';
 
 import {
   ClearFix,
-  Mixins,
   Styles,
   Utils,
 } from 'material-ui';
 
 const {ColorManipulator} = Utils;
-const {StyleResizable} = Mixins;
 const {Typography} = Styles;
-import * as Colors from 'material-ui/lib/styles/colors';
+import * as Colors from 'material-ui/lib/colors';
 
 const ColorsPage = React.createClass({
 

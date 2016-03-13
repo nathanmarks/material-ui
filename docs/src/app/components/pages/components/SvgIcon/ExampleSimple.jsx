@@ -1,5 +1,5 @@
 import React from 'react';
-import {blue500, red500, greenA200} from 'material-ui/lib/styles/colors';
+import {blue500, red500, greenA200} from 'material-ui/lib/colors';
 import SvgIcon from 'material-ui/lib/svg-icon';
 
 const iconStyles = {

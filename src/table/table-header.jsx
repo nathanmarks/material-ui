@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from '../checkbox';
 import TableHeaderColumn from './table-header-column';
-import getMuiTheme from '../styles/getMuiTheme';
+import getMuiTheme from '../getMuiTheme';
 
 function getStyles(props, state) {
   const {

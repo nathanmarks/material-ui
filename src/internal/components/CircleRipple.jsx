@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import autoPrefix from '../styles/auto-prefix';
-import Transitions from '../styles/transitions';
+import autoPrefix from '../../styles/auto-prefix';
+import Transitions from '../../styles/transitions';
 
 const CircleRipple = React.createClass({
 

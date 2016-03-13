@@ -1,6 +1,6 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 
 const SvgIcon = React.createClass({
 

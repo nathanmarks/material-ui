@@ -1,6 +1,6 @@
 import React from 'react';
-import Tooltip from '../tooltip';
-import getMuiTheme from '../styles/getMuiTheme';
+import Tooltip from '../internal/components/Tooltip';
+import getMuiTheme from '../getMuiTheme';
 
 function getStyles(props, state) {
   const {

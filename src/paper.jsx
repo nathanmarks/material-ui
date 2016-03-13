@@ -1,8 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import PropTypes from './utils/prop-types';
+import PropTypes from './internal/prop-types';
 import Transitions from './styles/transitions';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 
 function getStyles(props, state) {
   const {

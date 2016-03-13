@@ -1,6 +1,6 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import getMuiTheme from './styles/getMuiTheme';
+import getMuiTheme from './getMuiTheme';
 
 function getRelativeValue(value, min, max) {
   const clampedValue = Math.min(Math.max(min, value), max);

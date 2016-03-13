@@ -5,7 +5,7 @@ import ListItem from 'material-ui/lib/lists/list-item';
 import ActionGrade from 'material-ui/lib/svg-icons/action/grade';
 import Divider from 'material-ui/lib/divider';
 import Avatar from 'material-ui/lib/avatar';
-import {pinkA200, transparent} from 'material-ui/lib/styles/colors';
+import {pinkA200, transparent} from 'material-ui/lib/colors';
 
 const ListExampleContacts = () => (
   <MobileTearSheet>
