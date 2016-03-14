@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import update from 'react-addons-update';
-import ClickAwayListener from '../internal/components/ClickAwayListener';
+import ClickAwayListener from '../common/components/ClickAwayListener';
 import autoPrefix from '../styles/auto-prefix';
 import Transitions from '../styles/transitions';
 import keycode from 'keycode';
-import PropTypes from '../internal/prop-types';
+import PropTypes from '../common/prop-types';
 import List from '../lists/list';
 import getMuiTheme from '../getMuiTheme';
-import deprecated from '../internal/deprecatedPropType';
+import deprecated from '../common/deprecatedPropType';
 import warning from 'warning';
 
 const Menu = React.createClass({

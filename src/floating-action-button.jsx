@@ -1,13 +1,13 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import ColorManipulator from './internal/color-manipulator';
-import EnhancedButton from './internal/components/EnhancedButton';
+import ColorManipulator from './common/color-manipulator';
+import EnhancedButton from './common/components/EnhancedButton';
 import FontIcon from './font-icon';
 import Paper from './paper';
-import Children from './internal/children';
+import Children from './common/children';
 import getMuiTheme from './getMuiTheme';
 import warning from 'warning';
-import PropTypes from './internal/prop-types';
+import PropTypes from './common/prop-types';
 
 function getStyles(props, state) {
   const {

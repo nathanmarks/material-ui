@@ -1,6 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import PropTypes from './internal/prop-types';
+import PropTypes from './common/prop-types';
 import Transitions from './styles/transitions';
 import getMuiTheme from './getMuiTheme';
 

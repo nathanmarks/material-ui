@@ -1,5 +1,5 @@
 import React from 'react';
-import TouchRipple from '../internal/components/TouchRipple';
+import TouchRipple from '../common/components/TouchRipple';
 import Avatar from '../avatar';
 import {getMuiTheme} from '../styles';
 

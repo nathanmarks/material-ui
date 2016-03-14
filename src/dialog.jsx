@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import EventListener from 'react-event-listener';
 import keycode from 'keycode';
 import Transitions from './styles/transitions';
-import Overlay from './internal/components/Overlay';
-import RenderToLayer from './internal/components/RenderToLayer';
+import Overlay from './common/components/Overlay';
+import RenderToLayer from './common/components/RenderToLayer';
 import Paper from './paper';
 import getMuiTheme from './getMuiTheme';
 

@@ -1,5 +1,5 @@
 import merge from 'lodash.merge';
-import ColorManipulator from './internal/color-manipulator';
+import ColorManipulator from './common/color-manipulator';
 import lightBaseTheme from './styles/baseThemes/lightBaseTheme';
 import zIndex from './styles/zIndex';
 import {autoprefixer, callOnce, rtl} from './styles/transformers';

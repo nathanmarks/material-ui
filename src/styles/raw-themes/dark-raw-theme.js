@@ -1,5 +1,5 @@
 import darkBaseTheme from '../baseThemes/darkBaseTheme';
-import deprecatedExport from '../../internal/deprecatedExport';
+import deprecatedExport from '../../common/deprecatedExport';
 
 export default deprecatedExport(
   darkBaseTheme,

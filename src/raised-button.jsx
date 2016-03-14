@@ -1,8 +1,8 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import ColorManipulator from './internal/color-manipulator';
-import Children from './internal/children';
-import EnhancedButton from './internal/components/EnhancedButton';
+import ColorManipulator from './common/color-manipulator';
+import Children from './common/children';
+import EnhancedButton from './common/components/EnhancedButton';
 import Paper from './paper';
 import getMuiTheme from './getMuiTheme';
 

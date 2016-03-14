@@ -6,7 +6,7 @@ import Dialog from '../dialog';
 import DatePickerInline from './date-picker-inline';
 import FlatButton from '../flat-button';
 import getMuiTheme from '../getMuiTheme';
-import DateTime from '../internal/date-time';
+import DateTime from '../common/date-time';
 
 const DatePickerDialog = React.createClass({
 

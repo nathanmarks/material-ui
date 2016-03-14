@@ -4,7 +4,7 @@ pinkA200,
 grey100, grey300, grey400, grey500,
 white, darkBlack, fullBlack,
 } from '../colors';
-import ColorManipulator from '../../internal/color-manipulator';
+import ColorManipulator from '../../common/color-manipulator';
 import Spacing from '../spacing';
 
 /*

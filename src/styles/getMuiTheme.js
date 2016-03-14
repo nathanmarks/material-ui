@@ -1,5 +1,5 @@
 import getMuiTheme from '../getMuiTheme';
-import deprecatedExport from '../internal/deprecatedExport';
+import deprecatedExport from '../common/deprecatedExport';
 
 export default deprecatedExport(
   getMuiTheme,

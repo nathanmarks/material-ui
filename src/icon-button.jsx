@@ -1,10 +1,10 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import PropTypes from './internal/prop-types';
-import EnhancedButton from './internal/components/EnhancedButton';
+import PropTypes from './common/prop-types';
+import EnhancedButton from './common/components/EnhancedButton';
 import FontIcon from './font-icon';
-import Tooltip from './internal/components/Tooltip';
-import Children from './internal/children';
+import Tooltip from './common/components/Tooltip';
+import Children from './common/children';
 import getMuiTheme from './getMuiTheme';
 
 function getStyles(props, state) {

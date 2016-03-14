@@ -5,7 +5,7 @@ import mui from 'material-ui';
 import MarkdownElement from '../../MarkdownElement';
 import muiThemeable from 'material-ui/lib/muiThemeable';
 import getMuiTheme from 'material-ui/lib/getMuiTheme';
-import StyleResizable from 'material-ui/internal/style-resizable';
+import StyleResizable from 'material-ui/common/style-resizable';
 
 import themesText from './themes.md';
 

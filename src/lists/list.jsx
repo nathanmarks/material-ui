@@ -1,9 +1,9 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import PropTypes from '../internal/prop-types';
+import PropTypes from '../common/prop-types';
 import getMuiTheme from '../getMuiTheme';
 import Subheader from '../Subheader';
-import deprecated from '../internal/deprecatedPropType';
+import deprecated from '../common/deprecatedPropType';
 import warning from 'warning';
 
 const List = React.createClass({

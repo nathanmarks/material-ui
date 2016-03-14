@@ -1,7 +1,7 @@
 import React from 'react';
 import Transitions from './styles/transitions';
 import Paper from './paper';
-import EnhancedSwitch from './internal/components/EnhancedSwitch';
+import EnhancedSwitch from './common/components/EnhancedSwitch';
 import getMuiTheme from './getMuiTheme';
 
 function getStyles(props, state) {

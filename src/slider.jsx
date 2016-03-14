@@ -1,7 +1,7 @@
 import React from 'react';
 import keycode from 'keycode';
 import Transitions from './styles/transitions';
-import FocusRipple from './internal/components/FocusRipple';
+import FocusRipple from './common/components/FocusRipple';
 import getMuiTheme from './getMuiTheme';
 
 /**

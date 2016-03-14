@@ -3,7 +3,7 @@ import IconButton from './icon-button';
 import NavigationMenu from './svg-icons/navigation/menu';
 import getMuiTheme from './getMuiTheme';
 import Paper from './paper';
-import PropTypes from './internal/prop-types';
+import PropTypes from './common/prop-types';
 import warning from 'warning';
 
 function getStyles(props, state) {

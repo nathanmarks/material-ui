@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '../paper';
 import Transitions from '../styles/transitions';
 import getMuiTheme from '../getMuiTheme';
-import PropTypes from '../internal/prop-types';
+import PropTypes from '../common/prop-types';
 
 function getStyles(props, state) {
   const {

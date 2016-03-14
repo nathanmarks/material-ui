@@ -1,6 +1,6 @@
 import Transitions from '../styles/transitions';
 import React from 'react';
-import PropTypes from '../internal/prop-types';
+import PropTypes from '../common/prop-types';
 import getMuiTheme from '../getMuiTheme';
 import Paper from '../paper';
 

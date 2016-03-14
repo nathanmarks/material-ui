@@ -1,10 +1,10 @@
 import React from 'react';
-import EnhancedSwitch from './internal/components/EnhancedSwitch';
+import EnhancedSwitch from './common/components/EnhancedSwitch';
 import Transitions from './styles/transitions';
 import CheckboxOutline from './svg-icons/toggle/check-box-outline-blank';
 import CheckboxChecked from './svg-icons/toggle/check-box';
 import getMuiTheme from './getMuiTheme';
-import deprecated from './internal/deprecatedPropType';
+import deprecated from './common/deprecatedPropType';
 
 function getStyles(props, state) {
   const {

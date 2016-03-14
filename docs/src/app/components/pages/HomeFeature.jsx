@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {Paper, Styles} from 'material-ui';
 import {grey200} from 'material-ui/lib/colors';
-import StyleResizable from 'material-ui/lib/internal/style-resizable';
+import StyleResizable from 'material-ui/lib/common/style-resizable';
 const {Spacing, Transitions, Typography} = Styles;
 
 const HomeFeature = React.createClass({

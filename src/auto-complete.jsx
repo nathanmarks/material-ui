@@ -6,10 +6,10 @@ import Menu from './menus/menu';
 import MenuItem from './menus/menu-item';
 import Divider from './divider';
 import Popover from './popover/popover';
-import PropTypes from './internal/prop-types';
+import PropTypes from './common/prop-types';
 import getMuiTheme from './getMuiTheme';
 import warning from 'warning';
-import deprecated from './internal/deprecatedPropType';
+import deprecated from './common/deprecatedPropType';
 
 function getStyles(props, state) {
   const {

@@ -1,7 +1,7 @@
 import React from 'react';
-import DateTime from '../internal/date-time';
+import DateTime from '../common/date-time';
 import DayButton from './day-button';
-import ClearFix from '../internal/components/ClearFix';
+import ClearFix from '../common/components/ClearFix';
 
 const CalendarMonth = React.createClass({
 

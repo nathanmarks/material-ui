@@ -1,9 +1,9 @@
 import React from 'react';
 import Transitions from './styles/transitions';
-import ClickAwayListener from './internal/components/ClickAwayListener';
+import ClickAwayListener from './common/components/ClickAwayListener';
 import FlatButton from './flat-button';
 import getMuiTheme from './getMuiTheme';
-import StyleResizable from './internal/style-resizable';
+import StyleResizable from './common/style-resizable';
 
 function getStyles(props, state) {
   const {

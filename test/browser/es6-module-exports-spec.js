@@ -7,8 +7,8 @@ const ActionAccessibility = require('svg-icons').ActionAccessibility;
 import ImportGetMuiTheme from 'getMuiTheme';
 const RequireGetMuiTheme = require('getMuiTheme').default;
 
-import ImportColorManipulator from 'internal/color-manipulator';
-const RequireColorManipulator = require('internal/color-manipulator').default;
+import ImportColorManipulator from 'common/color-manipulator';
+const RequireColorManipulator = require('common/color-manipulator').default;
 
 describe('require() style import of ', () => {
   it('Divider component should not fail when rendering', () => {

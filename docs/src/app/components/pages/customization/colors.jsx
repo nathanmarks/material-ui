@@ -1,14 +1,13 @@
 import React from 'react';
 import Title from 'react-title-component';
-import StyleResizable from 'material-ui/internal/style-resizable';
+import StyleResizable from 'material-ui/common/style-resizable';
 
 import {
   ClearFix,
   Styles,
-  Utils,
 } from 'material-ui';
 
-const {ColorManipulator} = Utils;
+import ColorManipulator from 'material-ui/lib/common/color-manipulator';
 const {Typography} = Styles;
 import * as Colors from 'material-ui/lib/colors';
 

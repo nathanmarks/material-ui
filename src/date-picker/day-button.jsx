@@ -1,7 +1,7 @@
 import React from 'react';
 import Transition from '../styles/transitions';
-import DateTime from '../internal/date-time';
-import EnhancedButton from '../internal/components/EnhancedButton';
+import DateTime from '../common/date-time';
+import EnhancedButton from '../common/components/EnhancedButton';
 import getMuiTheme from '../getMuiTheme';
 
 function getStyles(props, state) {
