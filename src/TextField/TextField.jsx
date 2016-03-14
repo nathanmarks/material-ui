@@ -5,7 +5,7 @@ import shallowEqual from '../internal/shallow-equal';
 import ColorManipulator from '../internal/color-manipulator';
 import Transitions from '../styles/transitions';
 import deprecated from '../internal/deprecatedPropType';
-import EnhancedTextarea from './EnhancedTextarea';
+import EnhancedTextarea from './TextFieldTextarea';
 import getMuiTheme from '../getMuiTheme';
 import TextFieldHint from './TextFieldHint';
 import TextFieldLabel from './TextFieldLabel';
