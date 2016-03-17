@@ -11,6 +11,10 @@ import SeatIcon from 'material-ui/lib/svg-icons/action/event-seat';
 import PrintIcon from 'material-ui/lib/svg-icons/action/print';
 
 const styles = {
+  icon: {
+    width: 15,
+    height: 15,
+  },
   paper: {
     width: 500,
     margin: 'auto',
@@ -125,7 +129,7 @@ const VerticalLinearStepper = React.createClass({
           </Step>
 
           <Step
-            orderStepLabel={<SeatIcon style={iconStyle} />}
+            orderStepLabel={<SeatIcon style={styles.icon} />}
             isCompleted={false}
             optional={true}
             stepLabel={
@@ -152,12 +156,13 @@ const VerticalLinearStepper = React.createClass({
             ]}
           >
             <div>
-              If you wish to change your assigned seat, please select an alternative seat, or click Finish below to skip this step.
+              If you wish to change your assigned seat, please select
+              an alternative seat, or click Finish below to skip this step.
             </div>
           </Step>
 
           <Step
-            orderStepLabel={<PrintIcon style={iconStyle} />}
+            orderStepLabel={<PrintIcon style={styles.icon} />}
             stepLabel="Boarding pass"
             actions={[
               <RaisedButton

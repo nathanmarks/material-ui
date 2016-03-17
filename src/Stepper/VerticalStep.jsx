@@ -7,6 +7,16 @@ import {getMuiTheme} from '../styles';
 
 const Step = React.createClass({
   propTypes: {
+    /**
+     * An array of nodes for handling moving or canceling steps.
+     */
+    actions: PropTypes.arrayOf(PropTypes.node),
+
+    /**
+     * Override the inline-style of the div which contains the actions.
+     */
+    actionsWrapperStyle: PropTypes.object,
+
     children: PropTypes.node,
 
     /**
@@ -18,16 +28,6 @@ const Step = React.createClass({
      * Override the inline-style of the connector line.
      */
     connectorLineStyle: PropTypes.object,
-
-    /**
-     * An array of nodes for handling moving or canceling steps.
-     */
-    actions: PropTypes.arrayOf(PropTypes.node),
-
-    /**
-     * Override the inline-style of the div which contains the actions.
-     */
-    actionsWrapperStyle: PropTypes.object,
 
     /**
      * @ignore
