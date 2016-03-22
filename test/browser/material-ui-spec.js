@@ -1,4 +1,4 @@
-import MaterialUI from 'index';
+import * as MaterialUI from 'index';
 import {assert} from 'chai';
 
 describe('MaterialUI', () => {

@@ -4,6 +4,6 @@
  */
 
 import {assert} from 'chai';
-import MaterialUI from 'src';
+import * as MaterialUI from 'src';
 
-describe('Material UI', () => it('should have a default export', () => assert.ok(MaterialUI)));
+describe('Material UI', () => it('should have exports', () => assert.ok(MaterialUI)));
