@@ -13,7 +13,7 @@ export CircularProgress from './CircularProgress';
 export DatePicker from './DatePicker';
 export Dialog from './Dialog';
 export Divider from './Divider';
-import Drawer from './Drawer';
+export Drawer from './Drawer';
 export DropDownMenu from './DropDownMenu';
 export FlatButton from './FlatButton';
 export FloatingActionButton from './FloatingActionButton';
