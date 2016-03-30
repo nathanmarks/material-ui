@@ -43,12 +43,19 @@ const Calendar = React.createClass({
 
   getInitialState() {
     return {
-      displayDate: DateTime.getFirstDayOfMonth(this.props.initialDate),
+      displayDate: undefined,
       displayMonthDay: true,
-      selectedDate: this.props.initialDate,
+      selectedDate: undefined,
       transitionDirection: 'left',
       transitionEnter: true,
     };
+  },
+
+  componentWillMount() {
+    this.setState({
+      displayDate: DateTime.getFirstDayOfMonth(this.props.initialDate),
+      selectedDate: this.props.initialDate,
+    });
   },
 
   componentWillReceiveProps(nextProps) {
