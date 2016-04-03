@@ -81,9 +81,9 @@ export default function getMuiTheme(muiTheme, ...more) {
     },
     chip: {
       backgroundColor: '#e0e0e0',
-      pressedColor: '#d6d6d6',
+      pressedColor: '#d3d3d3',
       closeIconColor: ColorManipulator.fade(black, 0.26),
-      labelColor: ColorManipulator.fade(palette.textColor, 0.87),
+      textColor: ColorManipulator.fade(palette.textColor, 0.87),
       fontWeight: typography.fontWeightMedium,
       shadow: `0 1px 6px ${ColorManipulator.fade(palette.shadowColor, 0.12)},
         0 1px 4px ${ColorManipulator.fade(palette.shadowColor, 0.12)}`,

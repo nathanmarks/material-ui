@@ -9,6 +9,12 @@ blue300,
 indigo900,
 } from 'material-ui/styles/colors';
 
+const styles = {
+  chip: {
+    margin: '4px',
+  },
+};
+
 export default class ChipExampleSimple extends React.Component {
 
   handleRequestClose = () => {
@@ -21,49 +27,74 @@ export default class ChipExampleSimple extends React.Component {
 
   render() {
     return (
-      <div>
-        <Chip label="Text only"/>
+      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+
+        <Chip label="Text Only" />
 
         <Chip
-          label="Deletable text"
+          label="Deletable Text"
           deletable={true}
           onTouchTap={this.handleTouchTap}
           onRequestClose={this.handleRequestClose}
+          style={styles.chip}
         />
 
         <Chip
           label="Image Avatar"
+          avatar="images/ok-128.jpg"
+          onTouchTap={this.handleTouchTap}
+          style={styles.chip}
+        />
+
+        <Chip
+          label="Deletable Image Avatar"
           avatar="images/uxceo-128.jpg"
           deletable={true}
           onTouchTap={this.handleTouchTap}
           onRequestClose={this.handleRequestClose}
+          style={styles.chip}
         />
 
-        <Chip
-          label="SVG Icon Avatar"
-          avatar={<Avatar icon={<SvgIconFace />} />}
+        <Chip label="SVG Icon Avatar"
+          avatar={<Avatar color="#444" icon={<SvgIconFace />} />}
+          style={styles.chip}
         />
 
         <Chip
           label="Font Icon Avatar"
-          avatar={<Avatar icon={<FontIcon className="muidocs-icon-communication-voicemail" />} />}
+          avatar={<Avatar icon={<FontIcon className="material-icons">perm_identity</FontIcon>} />}
+          style={styles.chip}
         />
 
-        <Chip avatar="images/kerem-128.jpg">
-          Composed label
+        <Chip>Composed Label</Chip>
+
+        <Chip style={styles.chip}>
+          <Avatar src="images/kolage-128.jpg" />
+          Composed Image Avatar
         </Chip>
 
-        <Chip avatar={<Avatar size={32}>A</Avatar>}>
-          Text Avatar
+        <Chip deletable={true} style={styles.chip} >
+          <Avatar src={'images/kerem-128.jpg'} />
+          Composed Image Avatar
+        </Chip>
+
+        <Chip style={styles.chip} >
+          <Avatar color="#444" icon={<SvgIconFace />} />
+          Composed SvgIcon Avatar
+        </Chip>
+
+        <Chip style={styles.chip}>
+          <Avatar size={32}>A</Avatar>
+          Composed Text Avatar
         </Chip>
 
         <Chip
-          avatar={<Avatar size={32} color={blue300} backgroundColor={indigo900}>MB</Avatar>}
+          backgroundColor={blue300}
           deletable={true}
-          onTouchTap={this.handleTouchTap}
-          onRequestClose={this.handleRequestClose}
+          style={styles.chip}
         >
-          Colored Text Avatar
+          <Avatar size={32} color={blue300} backgroundColor={indigo900}>MB</Avatar>
+          Colored Avatar
         </Chip>
       </div>
     );
