@@ -273,6 +273,8 @@ class EnhancedButton extends React.Component {
       WebkitTapHighlightColor: enhancedButton.tapHighlightColor, // Remove mobile color flashing (deprecated)
       cursor: disabled ? 'default' : 'pointer',
       textDecoration: 'none',
+      margin: 0,
+      padding: 0,
       outline: 'none',
       font: 'inherit',
       /*
@@ -311,7 +313,7 @@ class EnhancedButton extends React.Component {
     };
     const buttonChildren = this.createButtonChildren();
 
-    // Provides backward compatibity. Added to support wrapping around <a> element.
+    // Provides backward compatibility. Added to support wrapping around <a> element.
     const targetLinkElement = buttonProps.hasOwnProperty('href') ? 'a' : 'span';
 
     return React.isValidElement(containerElement) ?
