@@ -18,14 +18,17 @@ function getStyles(props, context) {
       display: 'inline-block',
       textAlign: 'center',
       lineHeight: `${size}px`,
-      fontSize: size / 2 + 4,
+      fontSize: size / 2,
       borderRadius: '50%',
       height: size,
       width: size,
     },
     icon: {
       color: color || avatar.color,
-      margin: 8,
+      width: size / 5 * 3,
+      height: size / 5 * 3,
+      fontSize: size / 5 * 3,
+      margin: size / 5,
     },
   };
 
