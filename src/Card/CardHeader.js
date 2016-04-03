@@ -44,7 +44,9 @@ class CardHeader extends React.Component {
     actAsExpander: React.PropTypes.bool,
 
     /**
-     * This is the [Avatar](/#/components/avatar) element to be displayed on the Card Header.
+     * This is the [Avatar](/#/components/avatar) element to be displayed on the Chip.
+     * If `avatar is an `Avatar` or other element, it will be rendered.
+     * If `avatar` is a string, it will be used as the image `src` for an `Avatar`.
      */
     avatar: React.PropTypes.node,
 
