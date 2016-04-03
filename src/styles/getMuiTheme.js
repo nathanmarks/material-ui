@@ -25,17 +25,8 @@ export default function getMuiTheme(muiTheme, ...more) {
     userAgent: undefined,
   }, lightBaseTheme, muiTheme, ...more);
 
-  const {
-    spacing,
-    fontFamily,
-    palette,
-  } = muiTheme;
-
-  const baseTheme = {
-    spacing,
-    fontFamily,
-    palette,
-  };
+  const {spacing, fontFamily, palette} = muiTheme;
+  const baseTheme = {spacing, fontFamily, palette};
 
   muiTheme = merge({
     appBar: {
@@ -87,6 +78,15 @@ export default function getMuiTheme(muiTheme, ...more) {
       disabledColor: palette.disabledColor,
       labelColor: palette.textColor,
       labelDisabledColor: palette.disabledColor,
+    },
+    chip: {
+      backgroundColor: '#e0e0e0',
+      pressedColor: '#d6d6d6',
+      closeIconColor: ColorManipulator.fade(black, 0.26),
+      labelColor: ColorManipulator.fade(palette.textColor, 0.87),
+      fontWeight: typography.fontWeightMedium,
+      shadow: `0 1px 6px ${ColorManipulator.fade(palette.shadowColor, 0.12)},
+        0 1px 4px ${ColorManipulator.fade(palette.shadowColor, 0.12)}`,
     },
     datePicker: {
       color: palette.primary1Color,

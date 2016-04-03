@@ -25,10 +25,10 @@ function getStyles(props, context) {
     },
     icon: {
       color: color || avatar.color,
-      width: size / 5 * 3,
-      height: size / 5 * 3,
-      fontSize: size / 5 * 3,
-      margin: size / 5,
+      width: size * 0.6,
+      height: size * 0.6,
+      fontSize: size * 0.6,
+      margin: size * 0.2,
     },
   };
 
