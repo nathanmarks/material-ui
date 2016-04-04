@@ -175,6 +175,7 @@ class Chip extends React.Component {
     onClick: () => {},
     onFocus: () => {},
     onKeyboardFocus: () => {},
+    onRequestClose: () => {},
     onTouchEnd: () => {},
     onTouchStart: () => {},
     onTouchTap: () => {},
@@ -185,36 +186,24 @@ class Chip extends React.Component {
     avatar: null,
   };
 
-  static contextTypes = {
-    muiTheme: React.PropTypes.object.isRequired,
-  };
+  static contextTypes = {muiTheme: React.PropTypes.object.isRequired};
 
-  state = {
-    clicked: false,
-    focused: false,
-  };
+  state = {clicked: false, focused: false};
 
   handleBlur = (event) => {
-    this.setState({
-      clicked: false,
-      focused: false,
-    });
-    if (this.props.onBlur) this.props.onBlur(event);
+    this.setState({clicked: false, focused: false});
+    this.props.onBlur(event);
   };
 
   handleCloseIconTouchTap = (event) => {
     // Stop the event from bubbling up to the `Chip`
     event.stopPropagation();
-    if (this.props.onRequestClose) {
-      this.props.onRequestClose(event);
-    }
-  };
+    this.props.onRequestClose(event);
+  }
 
-  handleFocus = (event) => {
-    this.setState({
-      focused: true,
-    });
-    if (this.props.onFocus) this.props.onFocus(event);
+  handleFocus= (event) => {
+    this.setState({focused: true});
+    this.props.onFocus(event);
   };
 
   handleKeyboardFocus = (event, keyboardFocused) => {
@@ -223,30 +212,23 @@ class Chip extends React.Component {
     } else if (!this.state.hovered) {
       this.handleBlur();
     }
-    if (this.props.onKeyboardFocus) {
-      this.props.onKeyboardFocus(event, keyboardFocused);
-    }
+
+    this.props.onKeyboardFocus(event, keyboardFocused);
   };
 
   handleKeyDown = (event) => {
     if (keycode(event) === 'backspace') {
       event.preventDefault();
-      if (this.props.onRequestClose) {
-        this.props.onRequestClose(event);
-      }
+      this.props.onRequestClose(event);
     } else if (keycode(event) === 'enter') {
       event.preventDefault();
-      if (this.props.onTouchTap) {
-        this.props.onTouchTap(event);
-      }
+      this.props.onTouchTap(event);
     }
   };
 
   handleMouseEnter = (event) => {
     this.handleFocus();
-    if (this.props.onMouseEnter) {
-      this.props.onMouseEnter(event);
-    }
+    this.props.onMouseEnter(event);
   };
 
   handleMouseDown = (event) => {
@@ -254,9 +236,7 @@ class Chip extends React.Component {
     if (event.button === 0) {
       event.stopPropagation();
       this.setState({clicked: true});
-      if (this.props.onMouseDown) {
-        this.props.onMouseDown(event);
-      }
+      this.props.onMouseDown(event);
     }
   };
 
@@ -264,29 +244,23 @@ class Chip extends React.Component {
     if (!this.refs.button.isKeyboardFocused()) {
       this.handleBlur();
     }
-    if (this.props.onMouseLeave) {
-      this.props.onMouseLeave(event);
-    }
+    this.props.onMouseLeave(event);
   };
 
   handleMouseUp = (event) => {
     this.setState({clicked: false});
-    if (this.props.onMouseUp) this.props.onMouseUp(event);
+    this.props.onMouseUp(event);
   };
 
   handleTouchStart = (event) => {
     event.stopPropagation();
     this.setState({clicked: true});
-    if (this.props.onTouchStart) {
-      this.props.onTouchStart(event);
-    }
+    this.props.onTouchStart(event);
   };
 
   handleTouchEnd = (event) => {
     this.setState({clicked: false});
-    if (this.props.onTouchEnd) {
-      this.props.onTouchEnd(event);
-    }
+    this.props.onTouchEnd(event);
   };
 
   render() {
