@@ -17,7 +17,7 @@ function getStyles(props, context, state) {
     },
     chip: {
       backgroundColor: state.clicked ? pressedColor : backgroundColor,
-      borderRadius: '16px',
+      borderRadius: 16,
       boxShadow: state.focused ? chip.shadow : null,
       display: 'flex',
       whiteSpace: 'nowrap',
@@ -33,25 +33,16 @@ function getStyles(props, context, state) {
       fontSize: 13,
       fontWeight: chip.fontWeight,
       lineHeight: '32px',
-      paddingLeft: '12',
-      paddingRight: '12',
+      paddingLeft: 12,
+      paddingRight: 12,
       whiteSpace: 'nowrap',
-    },
-    root: {
     },
   };
 }
 
 class Chip extends React.Component {
-  static muiName = 'Chip';
 
   static propTypes = {
-    /**
-     * This is the [Avatar](/#/components/avatar) element to be displayed on the Chip.
-     * If `avatar is an `Avatar` or other element, it will be rendered.
-     * If `avatar` is a string, it will be used as the image `src` for an `Avatar`.
-     */
-    avatar: React.PropTypes.node,
 
     /**
      * Override the background color of the chip.
@@ -59,7 +50,7 @@ class Chip extends React.Component {
     backgroundColor: React.PropTypes.string,
 
     /**
-     * Can be used to render elements inside the Chip.
+     * Used to render elements inside the Chip.
      */
     children: React.PropTypes.node,
 
@@ -77,11 +68,6 @@ class Chip extends React.Component {
      * If true, the Chip displays a delete icon.
      */
     deletable: React.PropTypes.bool,
-
-    /**
-     * Can be used to render a label in the Chip.
-     */
-    label: React.PropTypes.node,
 
     /**
      * Override the label color.
@@ -172,7 +158,6 @@ class Chip extends React.Component {
 
   static defaultProps = {
     onBlur: () => {},
-    onClick: () => {},
     onFocus: () => {},
     onKeyboardFocus: () => {},
     onRequestClose: () => {},
@@ -183,7 +168,6 @@ class Chip extends React.Component {
     onMouseEnter: () => {},
     onMouseLeave: () => {},
     onMouseUp: () => {},
-    avatar: null,
   };
 
   static contextTypes = {muiTheme: React.PropTypes.object.isRequired};
@@ -199,7 +183,7 @@ class Chip extends React.Component {
     // Stop the event from bubbling up to the `Chip`
     event.stopPropagation();
     this.props.onRequestClose(event);
-  }
+  };
 
   handleFocus= (event) => {
     this.setState({focused: true});
@@ -264,17 +248,30 @@ class Chip extends React.Component {
   };
 
   render() {
+    const buttonEventHandlers = {
+      onBlur: this.handleBlur,
+      onFocus: this.handleFocus,
+      onKeyDown: this.handleKeyDown,
+      onMouseDown: this.handleMouseDown,
+      onMouseEnter: this.handleMouseEnter,
+      onMouseLeave: this.handleMouseLeave,
+      onMouseUp: this.handleMouseUp,
+      onTouchEnd: this.handleTouchEnd,
+      onTouchStart: this.handleTouchStart,
+      onKeyboardFocus: this.handleKeyboardFocus,
+    };
+
     const {prepareStyles} = this.context.muiTheme;
     const styles = getStyles(this.props, this.context, this.state);
 
-    const chipStyle = prepareStyles(Object.assign(styles.chip, this.props.chipStyle));
-    const rootStyle = Object.assign(styles.root, this.props.style);
-    const labelStyle = prepareStyles(Object.assign(styles.label, this.props.labelStyle));
+    let {children, chipStyle, className, labelStyle, ...other} = this.props;
+    const {deletable} = this.props;
+    let avatar = null;
 
-    const {className, deletable, ...other} = this.props;
-    let {avatar, children, label} = this.props;
+    chipStyle = prepareStyles(Object.assign(styles.chip, chipStyle));
+    labelStyle = prepareStyles(Object.assign(styles.label, labelStyle));
 
-    let deleteIcon = deletable ?
+    const deleteIcon = deletable ?
       <DeleteIcon
         color={styles.closeIcon.color}
         style={styles.closeIcon}
@@ -282,52 +279,34 @@ class Chip extends React.Component {
       /> :
       null;
 
-    // If the`avatar` prop isn't set, check if the first child is an Avatar
-    if (!avatar) {
-      const childCount = React.Children.count(children);
+    const childCount = React.Children.count(children);
 
-      if (childCount > 1) {
-        children = React.Children.toArray(children);
+    // If the first child is an avatar, extract it and style it
+    if (childCount > 1) {
+      children = React.Children.toArray(children);
 
-        if (React.isValidElement(children[0]) && children[0].type === Avatar) {
-          avatar = children[0];
-          label = children[1];
-        }
+      if (React.isValidElement(children[0]) && children[0].type === Avatar) {
+        avatar = children.shift();
+
+        avatar = React.cloneElement(avatar, {
+          style: Object.assign(styles.avatar, avatar.props.style),
+          size: 32,
+        });
       }
     }
 
-    if (React.isValidElement(avatar)) {
-      avatar = React.cloneElement(avatar, {
-        style: Object.assign(styles.avatar, avatar.props.style),
-        size: 32,
-      });
-    } else if (avatar !== null) {
-      avatar = <Avatar src={avatar} style={styles.avatar} size={32} />;
-    }
-
-    label = label || children;
-
     return (
       <EnhancedButton
+        {...other}
+        {...buttonEventHandlers}
         ref="button"
         className={className}
         disableTouchRipple={true}
         disableFocusRipple={true}
-        onBlur={this.handleBlur}
-        onFocus={this.handleFocus}
-        onKeyDown={this.handleKeyDown}
-        onMouseDown={this.handleMouseDown}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-        onMouseUp={this.handleMouseUp}
-        onTouchEnd={this.handleTouchEnd}
-        onTouchStart={this.handleTouchStart}
-        onKeyboardFocus={this.handleKeyboardFocus}
-        style={rootStyle}
       >
-        <div {...other} style={chipStyle}>
+        <div style={chipStyle}>
           {avatar}
-          <span style={labelStyle}>{label}</span>
+          <span style={labelStyle}>{children}</span>
           {deleteIcon}
         </div>
       </EnhancedButton>

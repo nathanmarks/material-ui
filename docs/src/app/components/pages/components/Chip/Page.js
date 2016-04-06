@@ -2,17 +2,16 @@ import React from 'react';
 import Title from 'react-title-component';
 
 import CodeExample from '../../../CodeExample';
-// import PropTypeDescription from '../../../PropTypeDescription';
+import PropTypeDescription from '../../../PropTypeDescription';
 import MarkdownElement from '../../../MarkdownElement';
 
 import chipReadmeText from './README';
 import ChipExampleSimple from './ExampleSimple';
 import chipExampleSimpleCode from '!raw!./ExampleSimple';
-// import chipCode from '!raw!material-ui/lib/Chip/Chip';
+import chipCode from '!raw!material-ui/lib/Chip/Chip';
 
 const description = 'Examples of Chips using an image, [Font Icon](/#/components/font-icon), ' +
-  '[SVG Icon](/#/components/svg-icon) and "Letter" (string), with and without custom colors. ' +
-  'The Avatar and label can be provided as props or as children.';
+  '[SVG Icon](/#/components/svg-icon) and "Letter" (string), with and without custom colors.';
 
 const ChipPage = () => (
   <div>
@@ -25,6 +24,7 @@ const ChipPage = () => (
     >
       <ChipExampleSimple />
     </CodeExample>
+    <PropTypeDescription code={chipCode} />
   </div>
 );
 

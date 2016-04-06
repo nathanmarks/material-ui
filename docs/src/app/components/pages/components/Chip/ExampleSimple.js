@@ -6,7 +6,7 @@ import SvgIconFace from 'material-ui/svg-icons/action/face';
 import {blue300, indigo900} from 'material-ui/styles/colors';
 
 const style = {
-  margin: '4px',
+  margin: 4,
 };
 
 function handleRequestClose() {
@@ -23,71 +23,58 @@ export default class ChipExampleSimple extends React.Component {
     return (
       <div style={{display: 'flex', flexWrap: 'wrap'}}>
 
-        <Chip label="Text Only" style={style} />
-
-        <Chip
-          label="Deletable Text"
-          deletable={true}
-          onTouchTap={handleTouchTap}
-          onRequestClose={handleRequestClose}
-          style={style}
-        />
-
-        <Chip
-          label="Image Avatar"
-          avatar="images/ok-128.jpg"
-          onTouchTap={handleTouchTap}
-          style={style}
-        />
-
-        <Chip
-          label="Deletable Image Avatar"
-          avatar="images/uxceo-128.jpg"
-          deletable={true}
-          onTouchTap={handleTouchTap}
-          onRequestClose={handleRequestClose}
-          style={style}
-        />
-
-        <Chip label="SVG Icon Avatar"
-          avatar={<Avatar color="#444" icon={<SvgIconFace />} />}
-          style={style}
-        />
-
-        <Chip
-          label="Font Icon Avatar"
-          avatar={<Avatar icon={<FontIcon className="material-icons">perm_identity</FontIcon>} />}
-          style={style}
-        />
-
-        <Chip>Composed Label</Chip>
-
         <Chip style={style}>
-          <Avatar src="images/kolage-128.jpg" />
-          Composed Image Avatar
+          Text Chip
         </Chip>
 
-        <Chip deletable={true} style={style} >
+        <Chip
+          deletable={true}
+          onRequestClose={handleRequestClose}
+          onTouchTap={handleTouchTap}
+          style={style}
+        >
+          Deletable Chip
+        </Chip>
+
+        <Chip style={style} onTouchTap={handleTouchTap}>
+          <Avatar src="images/kolage-128.jpg" />
+          Contact Chip
+        </Chip>
+
+        <Chip
+          deletable={true}
+          onRequestClose={handleRequestClose}
+          onTouchTap={handleTouchTap}
+          style={style}
+        >
           <Avatar src={'images/kerem-128.jpg'} />
-          Composed Image Avatar
+          Deletable Contact Chip
+        </Chip>
+
+        <Chip style={style}>
+          <Avatar icon={<FontIcon className="material-icons">perm_identity</FontIcon>} />
+          FontIcon Contact Chip
         </Chip>
 
         <Chip style={style} >
           <Avatar color="#444" icon={<SvgIconFace />} />
-          Composed SvgIcon Avatar
+          SvgIcon Contact Chip
         </Chip>
 
         <Chip style={style}>
           <Avatar size={32}>A</Avatar>
-          Composed Text Avatar
+          Text Contact Chip
         </Chip>
 
         <Chip
           backgroundColor={blue300}
           deletable={true}
+          onRequestClose={handleRequestClose}
           style={style}
         >
-          <Avatar size={32} color={blue300} backgroundColor={indigo900}>MB</Avatar>
+          <Avatar size={32} color={blue300} backgroundColor={indigo900}>
+            MB
+          </Avatar>
           Colored Avatar
         </Chip>
       </div>
