@@ -15,14 +15,6 @@ function getStyles(props, context, state) {
     avatar: {
       marginRight: -4,
     },
-    chip: {
-      backgroundColor: state.clicked ? pressedColor : backgroundColor,
-      borderRadius: 16,
-      boxShadow: state.focused ? chip.shadow : null,
-      display: 'flex',
-      whiteSpace: 'nowrap',
-      width: 'fit-content',
-    },
     closeIcon: {
       color: chip.closeIconColor,
       transform: 'rotate(45deg)',
@@ -36,6 +28,14 @@ function getStyles(props, context, state) {
       paddingLeft: 12,
       paddingRight: 12,
       whiteSpace: 'nowrap',
+    },
+    root: {
+      backgroundColor: state.clicked ? pressedColor : backgroundColor,
+      borderRadius: 16,
+      boxShadow: state.focused ? chip.shadow : null,
+      display: 'flex',
+      whiteSpace: 'nowrap',
+      width: 'fit-content',
     },
   };
 }
@@ -53,11 +53,6 @@ class Chip extends React.Component {
      * Used to render elements inside the Chip.
      */
     children: React.PropTypes.node,
-
-    /**
-     * Override the inline-styles of the chip.
-     */
-    chipStyle: React.PropTypes.object,
 
     /**
      * CSS `className` of the root element.
@@ -257,11 +252,11 @@ class Chip extends React.Component {
     const {prepareStyles} = this.context.muiTheme;
     const styles = getStyles(this.props, this.context, this.state);
 
-    let {children, chipStyle, className, labelStyle, ...other} = this.props;
+    let {children, style, className, labelStyle, ...other} = this.props;
     const deletable = this.props.onRequestClose;
     let avatar = null;
 
-    chipStyle = prepareStyles(Object.assign(styles.chip, chipStyle));
+    style = Object.assign(styles.root, style);
     labelStyle = prepareStyles(Object.assign(styles.label, labelStyle));
 
     const deleteIcon = deletable ?
@@ -292,17 +287,16 @@ class Chip extends React.Component {
       <EnhancedButton
         {...other}
         {...buttonEventHandlers}
-        ref="button"
         className={className}
         containerElement="div" // Firefox doesn't support nested buttons
         disableTouchRipple={true}
         disableFocusRipple={true}
+        ref="button"
+        style={style}
       >
-        <div style={chipStyle}>
-          {avatar}
-          <span style={labelStyle}>{children}</span>
-          {deleteIcon}
-        </div>
+        {avatar}
+        <span style={labelStyle}>{children}</span>
+        {deleteIcon}
       </EnhancedButton>
     );
   }
