@@ -200,9 +200,6 @@ class Chip extends React.Component {
       if (this.props.onRequestClose) {
         this.props.onRequestClose(event);
       }
-    } else if (keycode(event) === 'enter') {
-      event.preventDefault();
-      this.props.onTouchTap(event);
     }
   };
 
