@@ -182,6 +182,9 @@ class EnhancedButton extends React.Component {
       if (keycode(event) === 'enter' && this.state.isKeyboardFocused) {
         this.handleTouchTap(event);
       }
+      if (keycode(event) === 'esc' && this.state.isKeyboardFocused) {
+        this.removeKeyboardFocus(event);
+      }
     }
     this.props.onKeyDown(event);
   };
