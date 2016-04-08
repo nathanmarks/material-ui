@@ -65,11 +65,6 @@ class Chip extends React.Component {
     className: React.PropTypes.node,
 
     /**
-     * If true, the Chip displays a delete icon.
-     */
-    deletable: React.PropTypes.bool,
-
-    /**
      * Override the label color.
      */
     labelColor: React.PropTypes.string,
@@ -128,7 +123,7 @@ class Chip extends React.Component {
     onMouseUp: React.PropTypes.func,
 
     /**
-     * Callback function fired when the close button is clicked.
+     * Callback function fired when the close button is clicked. If set, the close button will be shown.
      * @param {object} event `touchTap` event targeting the element.
      */
     onRequestClose: React.PropTypes.func,
@@ -160,7 +155,6 @@ class Chip extends React.Component {
     onBlur: () => {},
     onFocus: () => {},
     onKeyboardFocus: () => {},
-    onRequestClose: () => {},
     onTouchEnd: () => {},
     onTouchStart: () => {},
     onTouchTap: () => {},
@@ -203,7 +197,9 @@ class Chip extends React.Component {
   handleKeyDown = (event) => {
     if (keycode(event) === 'backspace') {
       event.preventDefault();
-      this.props.onRequestClose(event);
+      if (this.props.onRequestClose) {
+        this.props.onRequestClose(event);
+      }
     } else if (keycode(event) === 'enter') {
       event.preventDefault();
       this.props.onTouchTap(event);
@@ -265,7 +261,7 @@ class Chip extends React.Component {
     const styles = getStyles(this.props, this.context, this.state);
 
     let {children, chipStyle, className, labelStyle, ...other} = this.props;
-    const {deletable} = this.props;
+    const deletable = this.props.onRequestClose;
     let avatar = null;
 
     chipStyle = prepareStyles(Object.assign(styles.chip, chipStyle));
