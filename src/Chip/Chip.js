@@ -294,6 +294,7 @@ class Chip extends React.Component {
         {...buttonEventHandlers}
         ref="button"
         className={className}
+        containerElement="div" // Firefox doesn't support nested buttons
         disableTouchRipple={true}
         disableFocusRipple={true}
       >
