@@ -37,31 +37,139 @@ function listenForTabPresses() {
 
 class EnhancedButton extends React.Component {
   static propTypes = {
+    /** @ignore */
     centerRipple: React.PropTypes.bool,
+
+    /** @ignore */
     children: React.PropTypes.node,
+
+    /** @ignore */
     containerElement: React.PropTypes.oneOfType([
       React.PropTypes.string,
       React.PropTypes.element,
     ]),
+
+    /** @ignore */
     disableFocusRipple: React.PropTypes.bool,
+
+    /** @ignore */
     disableKeyboardFocus: React.PropTypes.bool,
+
+    /** @ignore */
     disableTouchRipple: React.PropTypes.bool,
+
+    /** @ignore */
     disabled: React.PropTypes.bool,
+
+    /** @ignore */
     focusRippleColor: React.PropTypes.string,
+
+    /** @ignore */
     focusRippleOpacity: React.PropTypes.number,
+
+    /** @ignore */
     keyboardFocused: React.PropTypes.bool,
+
+    /** @ignore */
     linkButton: React.PropTypes.bool,
+
+    /**
+     * Callback function fired when the element loses focus.
+     * @param {object} event `blur` event targeting the element.
+     */
     onBlur: React.PropTypes.func,
+
+    /** @ignore */
     onClick: React.PropTypes.func,
+
+    /**
+     * Callback function fired when the element gains focus.
+     * @param {object} event `focus` event targeting the element.
+     */
     onFocus: React.PropTypes.func,
+
+    /**
+     * Callback function fired when a key is pressed.
+     * @param {object} event `keyboard` event targeting the element.
+     */
     onKeyDown: React.PropTypes.func,
+
+    /**
+     * Callback function fired when a key is released.
+     * @param {object} event `keyboard` event targeting the element.
+     */
     onKeyUp: React.PropTypes.func,
+
+    /**
+     * Callback function fired when the element is focused or blurred by the keyboard.
+     *
+     * @param {object} event `focus` or `blur` event targeting the element.
+     * @param {boolean} keyboardFocused Indicates whether the element is focused.
+     */
     onKeyboardFocus: React.PropTypes.func,
+
+    /**
+     * Callback function fired when a mouse button is pressed down on the element.
+     *
+     * @param {object} event `mousedown` event targeting the element.
+     */
+    onMouseDown: React.PropTypes.func,
+
+    /**
+     * Callback function fired when the mouse enters the element.
+     *
+     * @param {object} event `mouseenter` event targeting the element.
+     */
+    onMouseEnter: React.PropTypes.func,
+
+    /**
+     * Callback function fired when the mouse leaves the element.
+     *
+     * @param {object} event `mouseleave` event targeting the element.
+     */
+    onMouseLeave: React.PropTypes.func,
+
+    /**
+     * Callback function fired when a mouse button is released on the element.
+     *
+     * @param {object} event `mouseup` event targeting the element.
+     */
+    onMouseUp: React.PropTypes.func,
+
+    /**
+     * Callback function fired when a touchTap event ends.
+     *
+     * @param {object} event `touch` event targeting the element.
+     */
+    onTouchEnd: React.PropTypes.func,
+
+    /**
+     * Callback function fired when a touchTap event starts.
+     *
+     * @param {object} event `touch` event targeting the element.
+     */
+    onTouchStart: React.PropTypes.func,
+
+    /**
+     * Callback function fired when the `Chip` element is touch-tapped.
+     *
+     * @param {object} event TouchTap event targeting the element.
+     */
     onTouchTap: React.PropTypes.func,
+
+    /** @ignore */
     style: React.PropTypes.object,
+
+    /** @ignore */
     tabIndex: React.PropTypes.number,
+
+    /** @ignore */
     touchRippleColor: React.PropTypes.string,
+
+    /** @ignore */
     touchRippleOpacity: React.PropTypes.number,
+
+    /** @ignore */
     type: React.PropTypes.string,
   };
 
@@ -70,9 +178,15 @@ class EnhancedButton extends React.Component {
     onBlur: () => {},
     onClick: () => {},
     onFocus: () => {},
-    onKeyboardFocus: () => {},
     onKeyDown: () => {},
     onKeyUp: () => {},
+    onKeyboardFocus: () => {},
+    onMouseDown: () => {},
+    onMouseEnter: () => {},
+    onMouseLeave: () => {},
+    onMouseUp: () => {},
+    onTouchEnd: () => {},
+    onTouchStart: () => {},
     onTouchTap: () => {},
     tabIndex: 0,
     type: 'button',

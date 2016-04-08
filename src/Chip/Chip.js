@@ -69,52 +69,28 @@ class Chip extends React.Component {
      */
     labelStyle: React.PropTypes.object,
 
-    /**
-     * Callback function fired when the element loses focus.
-     * @param {object} event `blur` event targeting the element.
-     */
+    /** @ignore */
     onBlur: React.PropTypes.func,
 
-    /**
-     * Callback function fired when the element gains focus.
-     * @param {object} event `focus` event targeting the element.
-     */
+    /** @ignore */
     onFocus: React.PropTypes.func,
 
-    /**
-     * Callback function fired when the element is focused or blurred by the keyboard.
-     *
-     * @param {object} event `focus` or `blur` event targeting the element.
-     * @param {boolean} keyboardFocused Indicates whether the element is focused.
-     */
+    /** @ignore */
+    onKeyDown: React.PropTypes.func,
+
+    /** @ignore */
     onKeyboardFocus: React.PropTypes.func,
 
-    /**
-     * Callback function fired when a mouse button is pressed down on the element.
-     *
-     * @param {object} event `mousedown` event targeting the element.
-     */
+    /** @ignore */
     onMouseDown: React.PropTypes.func,
 
-    /**
-     * Callback function fired when the mouse enters the element.
-     *
-     * @param {object} event `mouseenter` event targeting the element.
-     */
+    /** @ignore */
     onMouseEnter: React.PropTypes.func,
 
-    /**
-     * Callback function fired when the mouse leaves the element.
-     *
-     * @param {object} event `mouseleave` event targeting the element.
-     */
+    /** @ignore */
     onMouseLeave: React.PropTypes.func,
 
-    /**
-     * Callback function fired when a mouse button is released on the element.
-     *
-     * @param {object} event `mouseup` event targeting the element.
-     */
+    /** @ignore */
     onMouseUp: React.PropTypes.func,
 
     /**
@@ -123,22 +99,11 @@ class Chip extends React.Component {
      */
     onRequestClose: React.PropTypes.func,
 
-    /**
-     * Callback function for when a touchTap event ends.
-     */
+    /** @ignore */
     onTouchEnd: React.PropTypes.func,
 
-    /**
-     * Callback function for when a touchTap event starts.
-     */
+    /** @ignore */
     onTouchStart: React.PropTypes.func,
-
-    /**
-     * Callback function fired when the `Chip` element is touch-tapped.
-     *
-     * @param {object} event TouchTap event targeting the `Chip` element.
-     */
-    onTouchTap: React.PropTypes.func,
 
     /**
      * Override the inline-styles of the root element.
@@ -149,14 +114,14 @@ class Chip extends React.Component {
   static defaultProps = {
     onBlur: () => {},
     onFocus: () => {},
+    onKeyDown: () => {},
     onKeyboardFocus: () => {},
-    onTouchEnd: () => {},
-    onTouchStart: () => {},
-    onTouchTap: () => {},
     onMouseDown: () => {},
     onMouseEnter: () => {},
     onMouseLeave: () => {},
     onMouseUp: () => {},
+    onTouchEnd: () => {},
+    onTouchStart: () => {},
   };
 
   static contextTypes = {muiTheme: React.PropTypes.object.isRequired};
@@ -196,11 +161,7 @@ class Chip extends React.Component {
         this.props.onRequestClose(event);
       }
     }
-  };
-
-  handleMouseEnter = (event) => {
-    this.handleFocus();
-    this.props.onMouseEnter(event);
+    this.props.onKeyDown(event);
   };
 
   handleMouseDown = (event) => {
@@ -210,6 +171,11 @@ class Chip extends React.Component {
       this.setState({clicked: true});
       this.props.onMouseDown(event);
     }
+  };
+
+  handleMouseEnter = (event) => {
+    this.handleFocus();
+    this.props.onMouseEnter(event);
   };
 
   handleMouseLeave = (event) => {
@@ -224,16 +190,17 @@ class Chip extends React.Component {
     this.props.onMouseUp(event);
   };
 
+  handleTouchEnd = (event) => {
+    this.setState({clicked: false});
+    this.props.onTouchEnd(event);
+  };
+
   handleTouchStart = (event) => {
     event.stopPropagation();
     this.setState({clicked: true});
     this.props.onTouchStart(event);
   };
 
-  handleTouchEnd = (event) => {
-    this.setState({clicked: false});
-    this.props.onTouchEnd(event);
-  };
 
   render() {
     const buttonEventHandlers = {
