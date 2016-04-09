@@ -3,7 +3,7 @@ import keycode from 'keycode';
 import ColorManipulator from '../utils/colorManipulator';
 import Avatar from '../Avatar';
 import EnhancedButton from '../internal/EnhancedButton';
-import DeleteIcon from '../svg-icons/content/add-circle';
+import DeleteIcon from '../svg-icons/navigation/cancel';
 
 function getStyles(props, context, state) {
   const {chip} = context.muiTheme;
@@ -17,7 +17,6 @@ function getStyles(props, context, state) {
     },
     closeIcon: {
       color: chip.closeIconColor,
-      transform: 'rotate(45deg)',
       margin: '4px 4px 0px -8px',
     },
     label: {
@@ -169,8 +168,8 @@ class Chip extends React.Component {
     if (event.button === 0) {
       event.stopPropagation();
       this.setState({clicked: true});
-      this.props.onMouseDown(event);
     }
+    this.props.onMouseDown(event);
   };
 
   handleMouseEnter = (event) => {
@@ -230,6 +229,7 @@ class Chip extends React.Component {
       <DeleteIcon
         color={styles.closeIcon.color}
         style={styles.closeIcon}
+        onClick={this.handleCloseIconTouchTap}
         onTouchTap={this.handleCloseIconTouchTap}
       /> :
       null;
@@ -240,7 +240,7 @@ class Chip extends React.Component {
     if (childCount > 1) {
       children = React.Children.toArray(children);
 
-      if (React.isValidElement(children[0]) && children[0].type === Avatar) {
+      if (React.isValidElement(children[0]) && children[0].type.muiName === 'Avatar') {
         avatar = children.shift();
 
         avatar = React.cloneElement(avatar, {
