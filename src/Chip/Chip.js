@@ -1,7 +1,6 @@
 import React from 'react';
 import keycode from 'keycode';
 import ColorManipulator from '../utils/colorManipulator';
-import Avatar from '../Avatar';
 import EnhancedButton from '../internal/EnhancedButton';
 import DeleteIcon from '../svg-icons/navigation/cancel';
 

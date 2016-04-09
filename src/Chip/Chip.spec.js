@@ -106,7 +106,7 @@ describe('<Chip />', () => {
       const wrapper = themedShallow(
         <Chip>Label</Chip>
       );
-      assert.notOk(wrapper.find('DeleteIcon').length);
+      assert.notOk(wrapper.find('NavigationCancel').length);
     });
 
     it('renders a delete icon after the label when onRequestClose is provided', () => {
