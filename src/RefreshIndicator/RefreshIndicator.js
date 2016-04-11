@@ -299,7 +299,7 @@ class RefreshIndicator extends React.Component {
   }
 
   render() {
-    const {style} = this.props;
+    const {style, ...other} = this.props;
     const styles = getStyles(this.props, this.context);
 
     return (
@@ -307,6 +307,7 @@ class RefreshIndicator extends React.Component {
         circle={true}
         style={Object.assign(styles.root, style)}
         ref="indicatorCt"
+        {...other}
       >
         {this.renderChildren()}
       </Paper>
