@@ -5,8 +5,8 @@
 
 #### React 15 compatibility :tada: :tada:
 
-This release also ensures compatibility with React 15 be sure to update to
-this version if you it.
+This release also ensures compatibility with React 15. You should update to
+this version if you need it.
 
 #### Simplify import statements :tada:
 
