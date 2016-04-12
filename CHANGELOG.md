@@ -3,6 +3,13 @@
 ## 0.15.0-beta.1
 ###### _Apr 13, 2016_
 
+#### React 15 compatibility :tada: :tada:
+
+This release also ensures compatibility with React 15 be sure to update to
+this version if you it.
+
+#### Simplify import statements :tada:
+
 This release changes how components are imported. You will need to update every
 import statement, Like:
 
@@ -59,6 +66,7 @@ Although we discourage you to use this library like that.
 
 ##### General
 - [Core] update components to es6 classes (#3843) :tada: :tada:
+- [Core] Add a `material-ui-codemod` package (#3782)
 - [Core] Update export syntax, move unit tests, update test dependencies (#3785)
 - [Core] Use .js extension instead of .jsx (#3765)
 - [SvgIcon] Add the new Material Icons (#3747)
@@ -85,7 +93,9 @@ Although we discourage you to use this library like that.
 - [DropDownMenu] Slightly improve performance (#3707)
 - [FloatingActionButton] fixed an error when element gets focus via tab (#3885)
 - [IconButton] Fix tooltip on hover (#3878)
+- [IconMenu] Removed props.ref call (#3913)
 - [LinearProgress] Prevent instances from sharing state (#3763)
+- [ListItem] Change color of rightIcon from `grey400` to `grey600` (#3938)
 - [ListItem] Fix duplicate prepareStyles with primaryText element (#3174)
 - [ListItem] Use the new icons to follow the material spec (#3899)
 - [MenuItem] Revert flex props from #3597, fixes #3845, reopens #3531 (#3928)
