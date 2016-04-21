@@ -1,52 +1,33 @@
 /* eslint-env mocha */
 import React from 'react';
-import Dialog from './Dialog';
-import {spy} from 'sinon';
-import {mount} from 'enzyme';
+import {shallow} from 'enzyme';
 import {assert} from 'chai';
-import TestUtils from 'react-addons-test-utils';
+import Dialog from './Dialog';
 import getMuiTheme from '../styles/getMuiTheme';
 
 describe('<Dialog />', () => {
   const muiTheme = getMuiTheme();
-  const mountWithContext = (node) => mount(node, {context: {muiTheme}});
+  const shallowWithContext = (node, context = {}) => {
+    return shallow(node, {
+      context: {muiTheme, ...context},
+    });
+  };
 
-  it('appends a dialog to the document body', () => {
-    const testClass = 'test-dialog-class';
-    mountWithContext(
+  it('merges styles and other props into the root node', () => {
+    const wrapper = shallowWithContext(
       <Dialog
-        open={true}
-        contentClassName={testClass}
+        style={{paddingRight: 200, color: 'purple', border: '1px solid tomato'}}
+        myProp="hello"
       />
     );
-
-    const dialogEl = document.getElementsByClassName(testClass)[0];
-    assert.ok(dialogEl);
+    const {style, myProp} = wrapper.props();
+    assert.strictEqual(style.paddingRight, 200);
+    assert.strictEqual(style.color, 'purple');
+    assert.strictEqual(style.border, '1px solid tomato');
+    assert.strictEqual(myProp, 'hello');
   });
 
-  it('registers events on dialog actions', () => {
-    const clickSpy = spy();
-    const testClass = 'dialog-action';
+  describe('rendering children', () => {
 
-    mountWithContext(
-      <Dialog
-        open={true}
-        actions={[
-          <button
-            key="a"
-            onClick={clickSpy}
-            className={testClass}
-          >
-            test
-          </button>,
-        ]}
-      />
-    );
-
-    const actionEl = document.getElementsByClassName(testClass)[0];
-    assert.ok(actionEl);
-
-    TestUtils.Simulate.click(actionEl);
-    assert.ok(clickSpy.called);
   });
 });

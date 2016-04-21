@@ -1,5 +1,8 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
+import DialogTitle from 'material-ui/Dialog/DialogTitle';
+import DialogContent from 'material-ui/Dialog/DialogContent';
+import DialogActions from 'material-ui/Dialog/DialogActions';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -22,32 +25,33 @@ export default class DialogExampleSimple extends React.Component {
     this.setState({open: false});
   };
 
-  render() {
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        keyboardFocused={true}
-        onTouchTap={this.handleClose}
-      />,
-    ];
+  handleToggle = () => this.setState({open: !this.state.open});
 
+  render() {
     return (
       <div>
-        <RaisedButton label="Dialog" onTouchTap={this.handleOpen} />
+        <RaisedButton label="Dialog" onTouchTap={this.handleToggle} />
         <Dialog
-          title="Dialog With Actions"
-          actions={actions}
-          modal={false}
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
-          The actions in this window were passed in as an array of React objects.
+          <DialogTitle>Use Google's location service?</DialogTitle>
+          <DialogContent>
+            Let Google help apps determine location. This means sending anonymous
+            location data to Google, even when no apps are running.
+          </DialogContent>
+          <DialogActions>
+            <FlatButton
+              label="No"
+              primary={true}
+              onTouchTap={this.handleClose}
+            />
+            <FlatButton
+              label="Yes"
+              primary={true}
+              onTouchTap={this.handleClose}
+            />
+          </DialogActions>
         </Dialog>
       </div>
     );

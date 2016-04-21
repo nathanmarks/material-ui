@@ -8,10 +8,10 @@ import MarkdownElement from '../../../MarkdownElement';
 import popoverReadmeText from './README';
 import PopoverExampleSimple from './ExampleSimple';
 import popoverExampleSimpleCode from '!raw!./ExampleSimple';
-import PopoverExampleAnimation from './ExampleAnimation';
-import popoverExampleAnimationCode from '!raw!./ExampleAnimation';
-import PopoverExampleConfigurable from './ExampleConfigurable';
-import popoverExampleConfigurableCode from '!raw!./ExampleConfigurable';
+// import PopoverExampleAnimation from './ExampleAnimation';
+// import popoverExampleAnimationCode from '!raw!./ExampleAnimation';
+// import PopoverExampleConfigurable from './ExampleConfigurable';
+// import popoverExampleConfigurableCode from '!raw!./ExampleConfigurable';
 import popoverNoteText from './NOTE';
 import popoverCode from '!raw!material-ui/lib/Popover/Popover';
 
@@ -34,20 +34,6 @@ const PopoverPage = () => (
       code={popoverExampleSimpleCode}
     >
       <PopoverExampleSimple />
-    </CodeExample>
-    <CodeExample
-      title="Animation"
-      description={descriptions.animation}
-      code={popoverExampleAnimationCode}
-    >
-      <PopoverExampleAnimation />
-    </CodeExample>
-    <CodeExample
-      title="Anchor playground"
-      description={descriptions.configurable}
-      code={popoverExampleConfigurableCode}
-    >
-      <PopoverExampleConfigurable />
     </CodeExample>
     <MarkdownElement text={popoverNoteText} />
     <PropTypeDescription code={popoverCode} />
