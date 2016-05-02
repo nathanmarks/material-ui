@@ -1,27 +1,28 @@
 import React, {Component, PropTypes} from 'react';
+import Modal from 'react-overlays/lib/Modal';
 import jss from '../styles/jss';
-import transitions from '../styles/transitions';
-import Modal from '../internal/Modal';
-import Paper from '../Paper';
 
 const getStyles = (props, context) => {
   const {muiTheme} = context;
-  const {spacing} = muiTheme.baseTheme;
 
-  const dialog = {
-    boxSizing: 'border-box',
-    transition: transitions.easeOut(),
-    position: 'relative',
-    width: '75%',
-    maxWidth: spacing.desktopKeylineIncrement * 12,
-    margin: '0 auto',
+  const modal = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
     zIndex: muiTheme.zIndex.dialog,
-    '&:focus': {
-      outline: 'none',
-    },
+    top: 0,
+    left: 0,
   };
 
-  return jss.createStyleSheet({dialog}).attach();
+  const overlay = {
+    ...muiTheme.overlay,
+    ...modal,
+  };
+
+  return jss.createStyleSheet({modal, overlay}).attach();
 };
 
 export default class Dialog extends Component {
@@ -51,12 +52,12 @@ export default class Dialog extends Component {
 
     return (
       <Modal
-        onRequestClose={onRequestClose}
-        open={open}
+        className={classes.modal}
+        backdropClassName={classes.overlay}
+        onHide={onRequestClose}
+        show={open}
       >
-        <Paper zDepth={4} className={classes.dialog}>
-          {children}
-        </Paper>
+        {children}
       </Modal>
     );
   }

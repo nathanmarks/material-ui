@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+// import jss from '../styles/jss';
 import Portal from 'react-overlays/lib/Portal';
 import Paper from '../Paper';
 import propTypes from '../utils/propTypes';
 
-const getStyles = () => {
-  const popover = {};
-  return StyleSheet.create({popover});
-};
+// const getStyles = () => {
+//   const popover = {};
+//   return jss.createStyleSheet({popover}).attach();
+// };
 
 export default class Popover extends Component {
   static propTypes = {
@@ -116,11 +116,11 @@ export default class Popover extends Component {
       ...other,
     } = this.props;
 
-    const styles = getStyles();
+    // const {classes} = getStyles();
 
     return open && (
       <Portal>
-        <Paper className={css(styles.popover)} {...other}>
+        <Paper {...other}>
           {children}
         </Paper>
       </Portal>

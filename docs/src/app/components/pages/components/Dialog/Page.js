@@ -1,6 +1,5 @@
 import React from 'react';
 import Title from 'react-title-component';
-import {StyleSheet, css} from 'aphrodite';
 
 import CodeExample from '../../../CodeExample';
 import PropTypeDescription from '../../../PropTypeDescription';
@@ -11,14 +10,14 @@ import DialogExampleSimple from './ExampleSimple';
 import dialogExampleSimpleCode from '!raw!./ExampleSimple';
 import dialogCode from '!raw!material-ui/lib/Dialog/Dialog';
 
-const styles = StyleSheet.create({
+const styles = {
   page: {
     color: 'red',
   },
-});
+};
 
 const DialogPage = () => (
-  <div className={css(styles.page)}>
+  <div style={styles.page}>
     <Title render={(previousTitle) => `Dialog - ${previousTitle}`} />
     <MarkdownElement text={dialogReadmeText} />
     <CodeExample

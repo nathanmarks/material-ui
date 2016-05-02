@@ -1,8 +1,8 @@
 import React, {Component, PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import jss from '../styles/jss';
 import classNames from 'classnames';
 
-const styles = StyleSheet.create({
+const {classes} = jss.createStyleSheet({
   actions: {
     display: 'flex',
     justifyContent: 'flex-end',
@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
     margin: '0 4px',
   },
   button: {
-    minWidth: 64,
+    minWidth: '64px !important', // EWWWW
   },
-});
+}).attach();
 
 export default class DialogActions extends Component {
   static propTypes = {
@@ -23,17 +23,17 @@ export default class DialogActions extends Component {
   };
 
   renderButton = (button) => (
-    <div className={css(styles.action)}>
+    <div className={classes.action}>
       {React.cloneElement(
         button,
-        {className: classNames(css(styles.button), button.className)}
+        {className: classNames(classes.button, button.className)}
       )}
     </div>
   );
 
   render() {
     return (
-      <div className={css(styles.actions)}>
+      <div className={classes.actions}>
         {React.Children.map(this.props.children, this.renderButton)}
       </div>
     );

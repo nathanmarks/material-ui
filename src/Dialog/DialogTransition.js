@@ -1,11 +1,11 @@
 import React, {PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import jss from '../styles/jss';
 import transitions from '../styles/transitions';
 import Transition from 'react-overlays/lib/Transition';
 
 const FADE_DURATION = 300;
 
-const styles = StyleSheet.create({
+const styles = jss.createStyleSheet({
   fade: {
     opacity: 0,
     transition: transitions.easeOut(`${FADE_DURATION}ms`, ['opacity']),
@@ -13,14 +13,14 @@ const styles = StyleSheet.create({
   in: {
     opacity: 1,
   },
-});
+}).attach();
 
 export default function DialogTransition({children, ...other}) {
   return (
     <Transition
-      className={css(styles.fade)}
-      enteredClassName={css(styles.in)}
-      enteringClassName={css(styles.in)}
+      className={styles.fade}
+      enteredClassName={styles.in}
+      enteringClassName={styles.in}
       timeout={FADE_DURATION}
       transitionAppear={true}
       {...other}

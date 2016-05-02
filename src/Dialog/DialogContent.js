@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {StyleSheet, css} from 'aphrodite';
+import jss from '../styles/jss';
 
 const getStyles = (props, context) => {
   const {
@@ -10,18 +10,17 @@ const getStyles = (props, context) => {
   } = context.muiTheme;
 
   const gutter = spacing.desktopGutter;
-  const styles = StyleSheet.create({
+
+  return jss.createStyleSheet({
     content: {
       fontSize: dialog.bodyFontSize,
       color: dialog.bodyColor,
       padding: `0 ${gutter}px ${gutter}px ${gutter}px`,
-      ':first-child': {
+      '&:first-child': {
         paddingTop: gutter,
       },
     },
-  });
-
-  return styles;
+  }).attach();
 };
 
 export default class DialogContent extends Component {
@@ -42,10 +41,10 @@ export default class DialogContent extends Component {
       children,
     } = this.props;
 
-    const styles = getStyles(this.props, this.context);
+    const {classes} = getStyles(this.props, this.context);
 
     return (
-      <div className={css(styles.content)}>{children}</div>
+      <div className={classes.content}>{children}</div>
     );
   }
 }
