@@ -81,7 +81,7 @@ class StepContent extends Component {
 
     const styles = getStyles(this.props, this.context);
     const transitionProps = {
-      transitionDelay: transitionDuration,
+      enterDelay: transitionDuration,
       transitionDuration: transitionDuration,
       open: active,
     };
