@@ -35,6 +35,11 @@ const globalStyleSheet = createStyleSheet('global', (theme) => ({
   p: {
     lineHeight: '1.6',
   },
+  img: {
+    maxWidth: '100%',
+    height: 'auto',
+    width: 'auto',
+  },
 }), { named: false });
 
 const styleSheet = createStyleSheet('AppFrame', (theme) => {
