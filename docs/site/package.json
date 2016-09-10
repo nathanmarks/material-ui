@@ -8,6 +8,7 @@
     "url": "https://github.com/callemall/material-ui.git"
   },
   "scripts": {
+    "generate": "node scripts/generate.js",
     "start": "node webpack.dev.server.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js"
   },
@@ -35,8 +36,8 @@
     "react-hot-loader": "^3.0.0-beta.2",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack": "^2.1.0-beta.22",
+    "webpack-dev-server": "^2.1.0-beta.4"
   },
   "dependencies": {
     "prismjs": "^1.5.1",

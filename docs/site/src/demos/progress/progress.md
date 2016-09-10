@@ -14,8 +14,8 @@ For example, a refresh operation should display either a refresh bar or an activ
 
 ## Indeterminate
 
-{{demo='progress/Circular.js'}}
+{{demo='Circular.js'}}
 
 ### Interactive Integration
 
-{{demo='progress/CircularFab.js'}}
+{{demo='CircularFab.js'}}

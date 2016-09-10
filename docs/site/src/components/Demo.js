@@ -7,9 +7,6 @@ import IconButton from 'material-ui/IconButton';
 import Collapse from 'material-ui/transitions/Collapse';
 import MarkdownElement from './MarkdownElement';
 
-const requireDemos = require.context('../demos', true, /\.js$/);
-const requireDemoSource = require.context('!raw!../demos', true, /\.js$/);
-
 const styleSheet = createStyleSheet('Demo', (theme) => {
   const { palette, mixins } = theme;
   return {
@@ -58,7 +55,7 @@ const styleSheet = createStyleSheet('Demo', (theme) => {
 
 export default class Demo extends Component {
   static propTypes = {
-    demo: PropTypes.string,
+    demo: PropTypes.object,
   };
 
   static contextTypes = {
@@ -84,8 +81,9 @@ export default class Demo extends Component {
     });
 
   render() {
-    const DemoComponent = requireDemos(`./${this.props.demo}`).default;
-    const demoSource = requireDemoSource(`./${this.props.demo}`);
+    console.info('Demo.render()');
+    const DemoComponent = this.props.demo.module;
+    const demoSource = this.props.demo.src;
     const classes = this.context.styleManager.render(styleSheet);
     const code = `\`\`\`js\n${demoSource}\n\`\`\``;
 

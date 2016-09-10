@@ -44,10 +44,11 @@ export default class MarkdownDocs extends Component {
   };
 
   renderContent(content) {
+    const { demos } = this.props.route;
     const contents = content.split(/(?:^{{)|(?:}}$)/gm);
     return contents.map((n, i) => {
-      if (demoRegexp.test(n)) {
-        return <Demo key={i} demo={n.match(demoRegexp)[1]} />;
+      if (demoRegexp.test(n) && demos) {
+        return <Demo key={i} demo={demos[n.match(demoRegexp)[1]]} />;
       }
       return <MarkdownElement key={i} text={n} />;
     });
@@ -62,3 +63,5 @@ export default class MarkdownDocs extends Component {
     );
   }
 }
+
+//  const content = System.import(`docs/${this.props.route.path}.md`);

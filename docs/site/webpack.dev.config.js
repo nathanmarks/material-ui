@@ -3,6 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
+
 module.exports = {
   debug: true,
   devtool: 'inline-source-map',
@@ -15,10 +16,30 @@ module.exports = {
       'webpack/hot/only-dev-server',
       './src/index',
     ],
+    // vendor: [
+    //   'dom-helpers',
+    //   'jss',
+    //   'jss-theme-reactor',
+    //   'jss-preset-default',
+    //   'keycode',
+    //   'lodash',
+    //   'react-addons-create-fragment',
+    //   'react-addons-transition-group',
+    //   'react-event-listener',
+    //   'recompose',
+    //   'prismjs',
+    //   'react',
+    //   'react-dom',
+    //   'react-redux',
+    //   'react-router',
+    //   'redux',
+    //   'warning',
+    // ],
   },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/build/',
   },
   module: {
@@ -59,6 +80,12 @@ module.exports = {
   },
   progress: true,
   plugins: [
+    new webpack.NamedModulesPlugin(),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: Infinity,
+    // }),
+    // new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };

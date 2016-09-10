@@ -4,16 +4,36 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'hidden-source-map',
   context: path.resolve(__dirname),
   entry: {
     main: [
       './src/index',
     ],
+    vendor: [
+      'dom-helpers',
+      'jss',
+      'jss-theme-reactor',
+      'jss-preset-default',
+      'keycode',
+      'lodash',
+      'react-addons-create-fragment',
+      'react-addons-transition-group',
+      'react-event-listener',
+      'recompose',
+      'prismjs',
+      'react',
+      'react-dom',
+      'react-redux',
+      'react-router',
+      'redux',
+      'warning',
+    ],
   },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/build/',
   },
   module: {
@@ -26,6 +46,11 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'file',
+        include: /assets\/images/,
+      },
+      {
+        test: /\.(jpg|gif|png)$/,
+        loader: 'file!img',
         include: /assets\/images/,
       },
       {
@@ -47,7 +72,11 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity,
+    }),
+    new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

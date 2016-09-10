@@ -8,4 +8,4 @@ Cards are a convenient means of displaying content composed of different element
 
 ## Simple Card
 
-{{demo='cards/SimpleCard.js'}}
+{{demo='SimpleCard.js'}}

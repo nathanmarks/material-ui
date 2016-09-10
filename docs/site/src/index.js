@@ -1,9 +1,8 @@
 // @flow weak
 
-import { AppContainer } from 'react-hot-loader';
+import AppContainer from 'react-hot-loader/lib/AppContainer';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import RedBox from 'redbox-react';
 import React from 'react';
 import ReactPerf from 'react-addons-perf';
 import { render } from 'react-dom';
@@ -40,9 +39,9 @@ render(
 if (process.env.NODE_ENV !== 'production' && module.hot) {
   module.hot.accept('./components/App', () => {
     const NextApp = require('./components/App').default; // eslint-disable-line global-require
-
+    console.log('what is this even doing now...');
     render(
-      <AppContainer errorReporter={RedBox}>
+      <AppContainer errorReporter={({ error }) => { throw error; }}>
         <Provider store={store}>
           <NextApp />
         </Provider>
